@@ -1,0 +1,13 @@
+#默认不配置路由情况下   程序会自动配置  并且前缀为serviceId
+#简洁方式
+zuul.routes.config=/user/**
+
+#zuul.routes.api-a.path=/api-a/**
+#zuul.routes.api-a.serviceId=config
+
+
+zuul.routes.api-b.path=/api-b/**
+zuul.routes.api-b.url=forward:/local
+
+#忽略接口  不对外界访问    针对所有路由
+zuul.ignored.patterns=/**/sign/**
